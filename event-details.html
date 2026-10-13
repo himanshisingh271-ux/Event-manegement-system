@@ -1,0 +1,32 @@
+<><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Event Details</h1>
+    <div class="event-details">
+        <img src="{{ url_for('static', filename=image) }}" alt="{{ title }}">
+
+        <h2>{{title}}</h2>
+        <p> 
+            {{description}}
+        </p>
+        <h3>Event Information</h3>
+
+        <p>Date: 15 september</p>
+        <p>Venue: Main Hall</p>
+        <p>Available seats: 50</p>
+
+
+    <a href="/register/{{event_name}}" class="register-button">
+        Register Now
+    </a>
+    
+</div>
+</body>
+</html>

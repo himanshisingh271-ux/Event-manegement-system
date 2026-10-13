@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to EventHub</h1>
+
+<p class="tagline">Discover • Register • Participate</p>
+
+    <p>Discover exciting events and register effortlessly</p>
+    
+<div class="navigation">
+    <a href="/student-login">Login</a>
+    <a href="/register/python">Student Registration</a>
+     <a href="/student-logout">Logout</a>
+</div>
+
+<div class="ai-section">
+    <h2>🤖 Find Your Best Event</h2>
+    <p>Tell us what you are interested in and get an event recommendation.</p>
+
+    <a href="/ai-recommend">Get AI Recommendation</a>
+</div>
+
+    <h2>Upcoming Events</h2>
+
+
+    <div class="event-container">
+
+
+        <!--your 3 event card divs go here-->
+
+
+<div class="event-card">
+    <img src="{{ url_for('static', filename='img1.jpg') }}" alt="AI & Machine Learning Workshop">
+    <h3>AI & Machine Learning Workshop</h3>
+    <p>Learn the fundamentals of AI & Machine Learning</p>
+    <a href="/event-details/ai">View Details</a>
+    <a href="/register/ai" class="register-button">Register Now</a>
+</div>
+
+<div class="event-card">
+    <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Web Development Bootcamp">
+    <h3>Web Development Bootcamp</h3>
+    <p>Learn modern web development technologies.</p>
+    <a href="/event-details/web">View Details</a>
+    <a href="/register/web" class="register-button">Register Now</a>
+</div>
+
+<div class="event-card">
+    <img src="{{ url_for('static', filename='img3.jpg') }}" alt="Python Programming Workshop">
+    <h3>Python Programming Workshop</h3>
+    <p>Master the fundamentals of Python programming.</p>
+    <a href="/event-details/python">View Details</a>
+    <a href="/register/python" class="register-button">Register Now</a>
+</div>
+</div>
+    
+</body>
+</html>

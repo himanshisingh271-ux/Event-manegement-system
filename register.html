@@ -1,0 +1,50 @@
+<><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Event Registration</h1>
+    <div class="registration-form">
+        <h2>Register for Event</h2>
+
+        <form id="registrationForm" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" placeholder="Enter your course">
+
+            <label for="event">Select Event</label>
+
+            <select id="event" name="event">
+                <option value="">Select an event</option>
+
+
+            <option value="ai" {% if event_name == "ai" %}selected{% endif %}>
+             AI & Machine Learning Workshop
+        </option>
+
+            <option value="web" {% if event_name == "web" %}selected{% endif %}>
+             Web Development Bootcamp
+        </option>
+
+            <option value="python" {% if event_name == "python" %}selected{% endif %}>
+            Python Programming Workshop
+        </option>
+        </select>
+
+            <button type="submit">Submit Registration</button>
+            
+        </form>
+    </div>
+        
+</body>
+</html>

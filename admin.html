@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            width: 90%;
+            margin: auto;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background: #222;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Admin Dashboard</h1>
+    <a href="/logout">Logout</a>
+
+    <h2>Registered Participants</h2>
+    <form method="GET" action="/admin">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by name, course or event"
+    >
+    <button type="submit">Search</button>
+</form>
+
+    <form method="GET" action="/admin">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search by name, course or event"
+    >
+    <button type="submit">Search</button>
+</form>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Course</th>
+                <th>Event</th>
+                <th>Action</th>
+            </tr>
+
+            {% for registration in registrations %}
+
+            <tr>
+                <td>{{ registration[0] }}</td>
+                <td>{{ registration[1] }}</td>
+                <td>{{ registration[2] }}</td>
+                <td>{{ registration[3] }}</td>
+                <td>{{ registration[4] }}</td>
+                <td>
+                    <a href="/delete-registration/{{ registration[0] }}"
+                        onclick="return confirm('Are you sure you want to delete this registration?');">
+                            Delete
+                        </a>
+                    </td>
+                </tr> 
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</body>
+</html>

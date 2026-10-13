@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Event Recommendation</title>
+</head>
+
+<body>
+
+    <h1>AI Event Recommendation</h1>
+
+    <p>Tell us what you are interested in:</p>
+
+    <form method="POST">
+        <input
+            type="text"
+            name="interest"
+            placeholder="Example: Python, AI, web development"
+            required
+        >
+
+        <button type="submit">Get Recommendation</button>
+    </form>
+{% if recommendation %}
+    <div class="recommendation">
+        <h2>🎯 Recommended Event</h2>
+        <h3>
+            <a href="/event-details/{{ recommended_event }}">
+            {{ recommendation }}
+            </a>
+        </h3>
+        <p>This event matches your interests.</p>
+    </div>
+{% endif %}
+
+</body>
+</html>
